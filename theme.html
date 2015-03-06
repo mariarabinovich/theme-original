@@ -74,6 +74,12 @@
               <div class="nav-collapse collapse">
                 <ul class="nav pull-right">
                   <li><a href="/">Blog</a></li>
+
+                  <li><a href="/tag/cat1" class="{{ set_active('/tag/cat1') }}">cat1</a></li>
+                  <li><a href="/tag/cat2" class="{{ set_active('/tag/cat2') }}">cat2</a></li>
+                  <li><a href="/tag/cat3" class="{{ set_active('/tag/cat3') }}">cat3</a></li>
+                  <li><a href="/" class="{{ set_active('') }}">all</a></li>
+
                   {% if pages %}
                   {% for page in pages %}
                   <li><a href="{{ page.permalink }}" class="{{ set_active(page.permalink) }}">{{ page.title }}</a></li>
@@ -146,7 +152,7 @@
             {% if post.tags %}
             <ul class="tags">
               {% for tag in post.tags %}
-                <li>adf<a href="/tag/{{ tag }}">#{{ tag }}</a></li>
+                <li><a href="/tag/{{ tag }}">#{{ tag }}</a></li>
               {% endfor %}
             </ul>
             {% endif %}
@@ -287,7 +293,7 @@
       <div class="row">
         <div class="span10 offset1">
           <footer>
-            &copy; <a href="/">{{ site.name }}</a>. Powered by <a href="http://postach.io" target="_blank">Postach.io</a>
+            &copy; <a href="/">{{ site.name }}</a>.
             {% if not is_login %}
               <ul class="inline pull-right">
                 <li><a href="/">Blog</a></li>
